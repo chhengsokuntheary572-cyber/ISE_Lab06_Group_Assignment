@@ -13,13 +13,15 @@ public class Session {
     private String topic;
     private int startTime;
     private int endTime;
+    private String room;
 
     public Session(String topic, int startTime, int endTime) {
         setTopic(topic); // Add validation
         setDuration(startTime, endTime);
+        this.room = room;
     }
 
-    // Add topic setter with validation (good practice)
+    // Add topic setter with validation
     public void setTopic(String topic) {
         if (topic == null || topic.trim().isEmpty()) {
             throw new IllegalArgumentException("Topic cannot be null or empty");
